@@ -14,4 +14,8 @@ public class RingRoad {
         tollGates.add(3,new TollGate(20,35));
         tollGates.add(4,new TollGate(15,30));
     }
+
+    List<TollGate> getTollGates() {
+        return tollGates;
+    }
 }
