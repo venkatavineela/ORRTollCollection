@@ -1,6 +1,6 @@
 import java.util.List;
 
-public class TollFee {
+public class TollFeeCalculator {
     int getCalculatedFee(List<TollGate> gatesList,int typeOfVehicle) {
         int fee = 0;
         if(typeOfVehicle == 2) {
