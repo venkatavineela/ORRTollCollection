@@ -8,6 +8,15 @@ public class TollOperator {
     RingRoad ringRoad = new RingRoad();
     TollFeeCalculator tollFeeCalculator = new TollFeeCalculator();
     Scanner scanner = new Scanner(System.in);
+    private int typeOfVehicle;
+    private int entryTollNumber;
+    private int exitTollNumber;
+    void operate() {
+        do {
+            getInput();
+        }while(invalidInput(typeOfVehicle, entryTollNumber, exitTollNumber));
+        calculateFee(typeOfVehicle, entryTollNumber, exitTollNumber);
+    }
 
     void getInput() {
         try {
