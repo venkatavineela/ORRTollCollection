@@ -29,4 +29,28 @@ public class TollOperatorTest {
         verify(io).display("Enter Entry Toll Number");
         verify(io).display("Give a valid input");
     }
+
+    @Test
+    public void invalidInputMethodShouldReturnFalseForCorrectInputs() {
+        assertFalse(tollOperator.invalidInput(2,4,1));
+
+    }
+
+    @Test
+    public void invalidInputMethodShouldReturnTrueAndShouldAskForCorrectWheelerType() {
+        assertTrue(tollOperator.invalidInput(3,3,1));
+        verify(io).display("Give the correct wheeler type");
+    }
+
+    @Test
+    public void invalidInputMethodShouldReturnTrueAndShouldDisplayInvalidEntryTollNumber() {
+        assertTrue(tollOperator.invalidInput(2,6,1));
+        verify(io).display("Invalid Entry Toll Number");
+    }
+
+    @Test
+    public void invalidInputMethodShouldReturnTrueAndShouldDisplayInvalidExitTollNumber() {
+        assertTrue(tollOperator.invalidInput(2,1,6));
+        verify(io).display("Invalid Exit Toll Number");
+    }
 }
