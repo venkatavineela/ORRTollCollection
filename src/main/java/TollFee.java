@@ -8,6 +8,11 @@ public class TollFee {
                 fee += aGatesList.getTwoWheelerFee();
             }
         }
+        else if(typeOfVehicle == 4) {
+            for (TollGate aGatesList : gatesList) {
+                fee += aGatesList.getFourWheelerFee();
+            }
+        }
         return fee;
     }
 }
