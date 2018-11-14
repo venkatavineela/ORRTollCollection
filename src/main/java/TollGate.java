@@ -7,4 +7,11 @@ public class TollGate {
         this.fourWheelerFee = fourWheelerFee;
     }
 
+    public int getTwoWheelerFee() {
+        return twoWheelerFee;
+    }
+
+    public int getFourWheelerFee() {
+        return fourWheelerFee;
+    }
 }
