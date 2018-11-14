@@ -25,7 +25,23 @@ public class TollOperator {
 
     }
 
-    private void calculateFee(int typeOfVehicle, int entryTollNumber, int exitTollNumber) {
+    boolean invalidInput(int typeOfVehicle, int entryTollNumber, int exitTollNumber) {
+        if(!(typeOfVehicle == 2 || typeOfVehicle == 4)) {
+            System.out.println("Give the correct wheeler type");
+            return true;
+        }
+        if(!(entryTollNumber >= 1 && entryTollNumber <= ringRoad.getTollGates().size())) {
+            System.out.println("Invalid Entry Toll Number");
+            return true;
+        }
+        if(!(exitTollNumber >= 0 && exitTollNumber <= ringRoad.getTollGates().size())) {
+            System.out.println("Invalid Exit Toll Number");
+            return true;
+        }
+        return false;
+    }
+
+    void calculateFee(int typeOfVehicle, int entryTollNumber, int exitTollNumber) {
         List<TollGate> tollGates = new ArrayList<>();
         int i = entryTollNumber;
         while(i <= exitTollNumber) {
