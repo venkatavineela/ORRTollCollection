@@ -9,10 +9,10 @@ public class RingRoad {
     }
 
     private void addTollGates() {
-        tollGates.add(1,new TollGate(10,15));
-        tollGates.add(2,new TollGate(25,45));
-        tollGates.add(3,new TollGate(20,35));
-        tollGates.add(4,new TollGate(15,30));
+        tollGates.add(new TollGate(10,15));
+        tollGates.add(new TollGate(25,45));
+        tollGates.add(new TollGate(20,35));
+        tollGates.add(new TollGate(15,30));
     }
 
     List<TollGate> getTollGates() {
