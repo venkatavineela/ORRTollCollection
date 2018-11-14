@@ -10,13 +10,19 @@ public class TollOperator {
     Scanner scanner = new Scanner(System.in);
 
     void getInput() {
-        System.out.println("Enter Vehicle Type:");
-        int typeOfVehicle = parseInt(scanner.nextLine());
-        System.out.println("Enter Entry Toll Number");
-        int entryTollNumber = parseInt(scanner.nextLine());
-        System.out.println("Enter Exit Toll Number");
-        int exitTollNumber = parseInt(scanner.nextLine());
-        calculateFee(typeOfVehicle, entryTollNumber, exitTollNumber);
+        try {
+            System.out.println("Enter Vehicle Type:");
+            typeOfVehicle = parseInt(scanner.nextLine());
+
+            System.out.println("Enter Entry Toll Number");
+            entryTollNumber = parseInt(scanner.nextLine());
+
+            System.out.println("Enter Exit Toll Number");
+            exitTollNumber = parseInt(scanner.nextLine());
+        }catch (Exception e) {
+            System.out.println("Give a valid input");
+        }
+
     }
 
     private void calculateFee(int typeOfVehicle, int entryTollNumber, int exitTollNumber) {
