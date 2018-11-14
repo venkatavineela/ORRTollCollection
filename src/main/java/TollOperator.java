@@ -44,13 +44,20 @@ public class TollOperator {
     void calculateFee(int typeOfVehicle, int entryTollNumber, int exitTollNumber) {
         List<TollGate> tollGates = new ArrayList<>();
         int i = entryTollNumber;
-        while(i <= exitTollNumber) {
-            if(i == ringRoad.getTollGates().size()) {
-                i = 1;
+        while (i <= ringRoad.getTollGates().size()) {
+            if (i == ringRoad.getTollGates().size()) {
+                i = 0;
             }
             tollGates.add(ringRoad.getTollGates().get(i));
             i++;
+            if(i == exitTollNumber) break;
         }
-        tollFeeCalculator.getCalculatedFee(tollGates,typeOfVehicle);
+        int tollFee = tollFeeCalculator.getCalculatedFee(tollGates,typeOfVehicle);
+        displayCalculatedFee(entryTollNumber, exitTollNumber, tollFee);
     }
+
+    private void displayCalculatedFee(int entryTollNumber, int exitTollNumber, int tollFee) {
+        System.out.println("Collect Toll fee Rs." + tollFee +  "for travel from TollGate#" + entryTollNumber + "to TollGate#" + exitTollNumber);
+    }
+
 }
