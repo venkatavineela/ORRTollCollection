@@ -4,15 +4,16 @@ import static java.lang.Integer.parseInt;
 
 public class TollOperator {
     private  InputOutput io;
-    public TollOperator(InputOutput io) {
-        this.io = io;
-    }
-
     RingRoad ringRoad = new RingRoad();
     TollFeeCalculator tollFeeCalculator = new TollFeeCalculator();
     private int typeOfVehicle;
     private int entryTollNumber;
     private int exitTollNumber;
+
+    public TollOperator(InputOutput io) {
+        this.io = io;
+    }
+
     void operate() {
         do {
             getInput();
