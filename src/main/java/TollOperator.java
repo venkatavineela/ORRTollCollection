@@ -1,13 +1,15 @@
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
-
 import static java.lang.Integer.parseInt;
 
 public class TollOperator {
+    private  InputOutput io;
+    public TollOperator(InputOutput io) {
+        this.io = io;
+    }
+
     RingRoad ringRoad = new RingRoad();
     TollFeeCalculator tollFeeCalculator = new TollFeeCalculator();
-    Scanner scanner = new Scanner(System.in);
     private int typeOfVehicle;
     private int entryTollNumber;
     private int exitTollNumber;
@@ -20,31 +22,31 @@ public class TollOperator {
 
     void getInput() {
         try {
-            System.out.println("Enter Vehicle Type:");
-            typeOfVehicle = parseInt(scanner.nextLine());
+            io.display("Enter Vehicle Type:");
+            typeOfVehicle = parseInt(io.getInput());
 
-            System.out.println("Enter Entry Toll Number");
-            entryTollNumber = parseInt(scanner.nextLine());
+            io.display("Enter Entry Toll Number");
+            entryTollNumber = parseInt(io.getInput());
 
-            System.out.println("Enter Exit Toll Number");
-            exitTollNumber = parseInt(scanner.nextLine());
+            io.display("Enter Exit Toll Number");
+            exitTollNumber = parseInt(io.getInput());
         }catch (Exception e) {
-            System.out.println("Give a valid input");
+            io.display("Give a valid input");
         }
 
     }
 
     boolean invalidInput(int typeOfVehicle, int entryTollNumber, int exitTollNumber) {
         if(!(typeOfVehicle == 2 || typeOfVehicle == 4)) {
-            System.out.println("Give the correct wheeler type");
+            io.display("Give the correct wheeler type");
             return true;
         }
         if(!(entryTollNumber >= 1 && entryTollNumber <= ringRoad.getTollGates().size())) {
-            System.out.println("Invalid Entry Toll Number");
+            io.display("Invalid Entry Toll Number");
             return true;
         }
         if(!(exitTollNumber >= 0 && exitTollNumber <= ringRoad.getTollGates().size())) {
-            System.out.println("Invalid Exit Toll Number");
+            io.display("Invalid Exit Toll Number");
             return true;
         }
         return false;
@@ -66,7 +68,7 @@ public class TollOperator {
     }
 
     private void displayCalculatedFee(int entryTollNumber, int exitTollNumber, int tollFee) {
-        System.out.println("Collect Toll fee Rs." + tollFee +  "for travel from TollGate#" + entryTollNumber + "to TollGate#" + exitTollNumber);
+        io.display("Collect Toll fee Rs." + tollFee +  "for travel from TollGate#" + entryTollNumber + "to TollGate#" + exitTollNumber);
     }
 
 }
