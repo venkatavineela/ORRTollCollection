@@ -1,8 +1,10 @@
 public class TollGate {
+    int number;
     private int twoWheelerFee;
     private int fourWheelerFee;
 
-    public TollGate(int twoWheelerFee, int fourWheelerFee) {
+    public TollGate(int number,int twoWheelerFee, int fourWheelerFee) {
+        this.number = number;
         this.twoWheelerFee = twoWheelerFee;
         this.fourWheelerFee = fourWheelerFee;
     }

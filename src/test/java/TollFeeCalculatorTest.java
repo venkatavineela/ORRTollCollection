@@ -7,8 +7,8 @@ import static org.junit.Assert.*;
 
 public class TollFeeCalculatorTest {
 
-    TollGate tollGate1 = new TollGate(20,30);
-    TollGate tollGate2 = new TollGate(15,35);
+    TollGate tollGate1 = new TollGate(1,20,30);
+    TollGate tollGate2 = new TollGate(2,15,35);
     List<TollGate> tollGates = Arrays.asList(tollGate1,tollGate2);
     TollFeeCalculator tollFeeCalculator = new TollFeeCalculator();
 

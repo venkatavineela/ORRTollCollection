@@ -31,9 +31,10 @@ public class TollOperator {
             if (i == ringRoad.getTollGates().size()) {
                 i = 0;
             }
-            tollGates.add(ringRoad.getTollGates().get(i));
             i++;
+            tollGates.add(ringRoad.getTollGate(i));
             if(i == exitTollNumber) break;
+
         }
         return tollFeeCalculator.getCalculatedFee(tollGates,typeOfVehicle);
     }
